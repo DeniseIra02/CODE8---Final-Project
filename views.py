@@ -9,8 +9,8 @@ def add(i):
         writer.writerow(i)
 
 #dummydata        
-add(['Anonymous', 'M', '54321', 'data@gmail.com'])
-add(['demo', 'M', '123', 'demo@gmail.com'])
+# add(['Anonymous', 'M', '54321', 'data@gmail.com'])
+# add(['demo', 'M', '123', 'demo@gmail.com'])
 
 #view data/show data
 def view():
@@ -45,5 +45,34 @@ def remove(i):
     
     save(new_list)
 
-remove('54321')
-view()
+# remove('54321')
+# view()
+
+#update a data
+def update(i):
+    
+    def update_newlist(j):
+        with open('data.csv', 'w', newline = '') as file:
+            writer = csv.writer(file)
+            writer.writerow(i)
+    
+    new_list = []
+    telephone = i[0]
+    
+    with open('data.csv', 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            new_list.append(row)
+            for element in row:
+                if element == telephone:
+                    name = i[1]
+                    gender = i[2]
+                    telephone = i[3]
+                    email = i[4]
+                    
+                    data = [name, gender, telephone, email]
+                    index = new_list.index(row)
+                    new_list[index] = data
+
+    update_newlist(new_list)
+    
