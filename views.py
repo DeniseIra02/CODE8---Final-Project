@@ -9,7 +9,8 @@ def add(i):
         writer.writerow(i)
 
 #dummydata        
-# add(['Anonymous', 'M', '54321', 'data@gmail.com'])
+add(['Anonymous', 'M', '54321', 'data@gmail.com'])
+add(['demo', 'M', '123', 'demo@gmail.com'])
 
 #view data/show data
 def view():
@@ -20,12 +21,13 @@ def view():
             data.append(row)
     print(data)
 
-view()
+#view()
 
 #remove a data
 def remove(i): 
+    #save
     def save(j):
-        with open('data.csv') as file:
+        with open('data.csv', 'w', newline = '') as file:
             writer = csv.writer(file)
             writer.writerows(j)
             
@@ -42,3 +44,6 @@ def remove(i):
                     new_list.remove(row)
     
     save(new_list)
+
+remove('54321')
+view()
