@@ -79,6 +79,13 @@ def insert():
         add(data)
         messagebox.showinfo('data', 'Data added successfully.')
         
+        e_name.delete(0, 'end')
+        c_gender.delete(0, 'end')
+        e_telephone.delete(0, 'end')
+        e_email.delete(0, 'end')
+        
+        show()
+        
 #frame_up style/widgets
 app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17 bold'), bg = co2, fg = co0)
 app_name.place(x = 5, y = 5)
@@ -120,7 +127,7 @@ b_view = Button(frame_down, text = "View", width = 10,  height = 1, bg = co2, fg
 b_view.place(x = 290, y = 50)
 
 #add
-b_add = Button(frame_down, text = "Add", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'))
+b_add = Button(frame_down, text = "Add", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = insert)
 b_add.place(x = 400, y = 50)
 
 #update
