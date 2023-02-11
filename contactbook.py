@@ -20,15 +20,16 @@ frame_up.grid(row = 0, column = 0, padx = 0, pady = 1)
 frame_down = Frame(window, width = 500, height = 150, bg = co0)
 frame_down.grid(row = 1, column = 0, padx = 0, pady = 1)
 
-frame_table = Frame(window, width = 500, height = 100, bg = co0)
-frame_table.grid(row = 2, column = 0, columnspan = 2, padx = 0, pady = 1, sticky = NW)
-
+frame_table = Frame(window, width = 500, height = 100, bg = co0, relief = "flat")
+frame_table.grid(row = 2, column = 0, columnspan = 2, padx = 10, pady = 1, sticky = NW)
 
 #functions
 def show():
     global tree
     #header of the table
     listheader = ['Name', 'Gender', 'Telephone', 'Email']
+    
+    demo_list = [['girl', 'F', '321', '123@gmail.com']]
     
     tree = ttk.Treeview(frame_table, selectmode = "extended", columns = listheader, show = "headings" )
     
@@ -53,6 +54,10 @@ def show():
     tree.column(1, width = 50, anchor = NW)
     tree.column(2, width = 100, anchor = NW)
     tree.column(3, width = 180, anchor = NW)
+    
+    for item in demo_list:
+        tree.insert ('', 'end', values = item)
+    
     
 show()
 
