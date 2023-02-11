@@ -41,4 +41,16 @@ c_gender = ttk.Combobox(frame_down, width = 27)
 c_gender['values'] = ['', 'F', 'M']
 c_gender.place(x = 80, y = 50)
 
+#telephone
+l_telephone = Label(frame_down, text = "Telephone*", height = 1, font = ('Ivy 10'), bg = co0, anchor = NW)
+l_telephone.place(x = 10, y = 80)
+e_telephone = Entry(frame_down, width = 25, justify = "left", highlightthickness = 1, relief = "solid")
+e_telephone.place(x = 80, y = 80)
+
+#email
+l_email = Label(frame_down, text = "Email *", height = 1, font = ('Ivy 10'), bg = co0, anchor = NW)
+l_email.place(x = 10, y = 110)
+e_email = Entry(frame_down, width = 25, justify = "left", highlightthickness = 1, relief = "solid")
+e_email.place(x = 80, y = 110)
+
 window.mainloop()
