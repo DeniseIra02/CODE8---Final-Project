@@ -56,7 +56,7 @@ def update(i):
     def update_newlist(j):
         with open('data.csv', 'w', newline = '') as file:
             writer = csv.writer(file)
-            writer.writerow(i)
+            writer.writerows(j)
     
     new_list = []
     telephone = i[0]
