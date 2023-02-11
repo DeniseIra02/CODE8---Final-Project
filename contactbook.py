@@ -139,14 +139,19 @@ def to_remove():
         tree_data = tree.focus()
         tree_dictionary = tree.item(tree_data)
         tree_list = tree_dictionary['values']
-        tree_telephone = str[tree_list[2]]
+        tree_telephone = str(tree_list[2])
         
         remove(tree_telephone)
         
         messagebox.showinfo('Success', 'Data has been deleted.')
         
-    except:
-        pass
+        for widget in frame_table.winfo_children():
+            widget.destroy()
+        
+        show()
+        
+    except IndexError:
+        messagebox.showerror('Error', 'Select one from the table.')
         
 #frame_up style/widgets
 app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17 bold'), bg = co2, fg = co0)
@@ -197,7 +202,7 @@ b_update = Button(frame_down, text = "Update", width = 10,  height = 1, bg = co2
 b_update.place(x = 400, y = 80)
 
 #delete
-b_delete = Button(frame_down, text = "Delete", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'))
+b_delete = Button(frame_down, text = "Delete", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = to_remove)
 b_delete.place(x = 400, y = 110)
 
 window.mainloop()
