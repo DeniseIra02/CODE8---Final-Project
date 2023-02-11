@@ -59,4 +59,20 @@ b_search.place(x = 290, y = 20)
 e_search = Entry(frame_down, width = 16, justify = "left", font = ('Ivy', 11), highlightthickness = 1, relief = "solid")
 e_search.place(x = 347, y = 20)
 
+#view button
+b_view = Button(frame_down, text = "View", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'))
+b_view.place(x = 290, y = 50)
+
+#add
+b_add = Button(frame_down, text = "Add", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'))
+b_add.place(x = 400, y = 50)
+
+#update
+b_update = Button(frame_down, text = "Update", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'))
+b_update.place(x = 400, y = 80)
+
+#delete
+b_delete = Button(frame_down, text = "Delete", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'))
+b_delete.place(x = 400, y = 110)
+
 window.mainloop()
