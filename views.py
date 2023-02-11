@@ -75,4 +75,6 @@ def update(i):
                     new_list[index] = data
 
     update_newlist(new_list)
-    
+
+sample = ['123', 'girl', 'F', '123', 'girl@gmail.com']
+update(sample)
