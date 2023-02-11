@@ -21,6 +21,7 @@ def view():
         for row in reader:
             data.append(row)
     print(data)
+    return data
 
 #view()
 
