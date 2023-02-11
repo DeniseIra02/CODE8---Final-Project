@@ -1,4 +1,5 @@
 from asyncore import write
+import re
 import sys
 import csv
 
@@ -92,4 +93,4 @@ def search(i):
                     data.append(row)
     print(data)
     return data
-search('123')
+#search('123')

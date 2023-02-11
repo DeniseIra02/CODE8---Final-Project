@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+from views import *
 
 #colors
 co0 = "#ffffff"
@@ -29,7 +30,7 @@ def show():
     #header of the table
     listheader = ['Name', 'Gender', 'Telephone', 'Email']
     
-    demo_list = [['girl', 'F', '321', '123@gmail.com']]
+    demo_list = view()
     
     tree = ttk.Treeview(frame_table, selectmode = "extended", columns = listheader, show = "headings" )
     
