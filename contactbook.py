@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from views import *
+from tkinter import messagebox
 
 #colors
 co0 = "#ffffff"
@@ -70,7 +71,14 @@ def insert():
     Email = e_email.get()
     
     data = [Name, Gender, Telephone, Email]
-
+    
+    if Name == '' or Gender == '' or Telephone == '' or Email == '':
+        messagebox.showwarning('data', 'Please fill all fields')
+    
+    else:
+        add(data)
+        messagebox.showinfo('data', 'Data added successfully.')
+        
 #frame_up style/widgets
 app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17 bold'), bg = co2, fg = co0)
 app_name.place(x = 5, y = 5)
