@@ -10,7 +10,7 @@ def add(i):
 
 #dummydata        
 # add(['Anonymous', 'M', '54321', 'data@gmail.com'])
-# add(['demo', 'M', '123', 'demo@gmail.com'])
+#add(['demo', 'M', '123', 'demo@gmail.com'])
 
 #view data/show data
 def view():
@@ -90,4 +90,6 @@ def search(i):
             for element in row:
                 if element == telephone:
                     data.append(row)
+    print(data)
     return data
+search('123')
