@@ -62,6 +62,15 @@ def show():
     
 show()
 
+#insert
+def insert():
+    Name = e_name.get()
+    Gender = c_gender.get()
+    Telephone = e_telephone.get()
+    Email = e_email.get()
+    
+    data = [Name, Gender, Telephone, Email]
+
 #frame_up style/widgets
 app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17 bold'), bg = co2, fg = co0)
 app_name.place(x = 5, y = 5)
