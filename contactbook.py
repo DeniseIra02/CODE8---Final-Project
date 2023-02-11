@@ -59,10 +59,10 @@ def show():
     
     for item in demo_list:
         tree.insert ('', 'end', values = item)
-    
-    
+       
 show()
 
+#codings
 #insert
 def insert():
     Name = e_name.get()
@@ -85,6 +85,23 @@ def insert():
         e_email.delete(0, 'end')
         
         show()
+
+#to update 
+def to_update():
+    try:
+        tree_data = tree.focus()
+        tree_dictionary = tree.item(tree_data)
+        tree_list = tree_dictionary['values']
+        
+        Name = str(tree_list[0])
+        Gender = str(tree_list[1])
+        Telephone = str(tree_list[2])
+        Email = str(tree_list[3])
+        
+        e_name.insert (0, Name)
+        c_gender.insert(0, Gender)
+        e_telephone.insert(0, Telephone)
+        e_email.insert(0, Email)
         
 #frame_up style/widgets
 app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17 bold'), bg = co2, fg = co0)
