@@ -24,6 +24,11 @@ view()
 
 #remove a data
 def remove(i): 
+    def save(j):
+        with open('data.csv') as file:
+            writer = csv.writer(file)
+            writer.writerows(j)
+            
     new_list = []
     telephone = i
     
@@ -35,3 +40,5 @@ def remove(i):
             for element in row:
                 if element == telephone:
                     new_list.remove(row)
+    
+    save(new_list)
