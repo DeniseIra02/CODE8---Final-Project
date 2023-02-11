@@ -103,6 +103,36 @@ def to_update():
         e_telephone.insert(0, Telephone)
         e_email.insert(0, Email)
         
+        #to save updated data
+        def confirm():
+            new_name = e_email.get()
+            new_gender = c_gender.get()
+            new_telephone = e_telephone.get()
+            new_email = e_email.get()
+            
+            data = [new_telephone, new_name, new_gender, new_telephone, new_email]
+            
+            update(data)
+            
+            messagebox.showinfo('Success', 'Data updated successfully.')
+            
+            e_name.delete(0, 'end')
+            c_gender.delete(0, 'end')
+            e_telephone.delete(0, 'end')
+            e_email.delete(0, 'end')
+            
+            for widget in frame_table.winfo_children():
+                widget.destroy()
+                
+            b_confirm.destroy()
+            
+            show()
+        b_confirm = Button(frame_down, text = "Confirm", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = confirm)
+        b_confirm.place(x = 290, y = 110)
+    
+    except IndexError:
+        messagebox.showerror('Error', 'Select one from the table.')
+        
 #frame_up style/widgets
 app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17 bold'), bg = co2, fg = co0)
 app_name.place(x = 5, y = 5)
@@ -148,7 +178,7 @@ b_add = Button(frame_down, text = "Add", width = 10,  height = 1, bg = co2, fg =
 b_add.place(x = 400, y = 50)
 
 #update
-b_update = Button(frame_down, text = "Update", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'))
+b_update = Button(frame_down, text = "Update", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = to_update)
 b_update.place(x = 400, y = 80)
 
 #delete
