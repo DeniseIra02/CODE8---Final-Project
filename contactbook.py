@@ -152,6 +152,20 @@ def to_remove():
         
     except IndexError:
         messagebox.showerror('Error', 'Select one from the table.')
+
+#to search
+def to_search():
+    telephone = e_search.get()
+    
+    data = search(telephone)
+    
+    def delete_command():
+        tree.delete(*tree.get_children())
+        
+    delete_command()
+    
+    for item in data:
+        tree.insert('', 'end', values = item)
         
 #frame_up style/widgets
 app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17 bold'), bg = co2, fg = co0)
@@ -184,13 +198,13 @@ e_email = Entry(frame_down, width = 25, justify = "left", highlightthickness = 1
 e_email.place(x = 80, y = 110)
 
 #search button/entry
-b_search = Button(frame_down, text = "Search", height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'))
+b_search = Button(frame_down, text = "Search", height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = to_search)
 b_search.place(x = 290, y = 20)
 e_search = Entry(frame_down, width = 16, justify = "left", font = ('Ivy', 11), highlightthickness = 1, relief = "solid")
 e_search.place(x = 347, y = 20)
 
 #view button
-b_view = Button(frame_down, text = "View", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'))
+b_view = Button(frame_down, text = "View", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = show)
 b_view.place(x = 290, y = 50)
 
 #add
