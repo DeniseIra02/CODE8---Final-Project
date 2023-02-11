@@ -28,10 +28,17 @@ app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17
 app_name.place(x = 5, y = 5)
 
 #frame_down style/widgets
+#name
 l_name = Label(frame_down, text = "Name *", width = 20, height = 1, font = ('Ivy 10'), bg = co0, anchor = NW)
 l_name.place(x = 10, y = 20)
-
 e_name = Entry(frame_down, width = 25, justify = "left", highlightthickness = 1, relief = "solid")
 e_name.place(x = 80, y = 20)
+
+#gender
+l_gender = Label(frame_down, text = "Gender *", width = 20, height = 1, font = ('Ivy 10'), bg = co0, anchor = NW)
+l_gender.place(x = 10, y = 50)
+c_gender = ttk.Combobox(frame_down, width = 27)
+c_gender['values'] = ['', 'F', 'M']
+c_gender.place(x = 80, y = 50)
 
 window.mainloop()
