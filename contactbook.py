@@ -21,7 +21,7 @@ frame_down = Frame(window, width = 500, height = 150, bg = co0)
 frame_down.grid(row = 1, column = 0, padx = 0, pady = 1)
 
 frame_table = Frame(window, width = 500, height = 100, bg = co0)
-frame_table.grid(row = 2, column = 0, columnspan = 2, padx = 0, pady = 1)
+frame_table.grid(row = 2, column = 0, columnspan = 2, padx = 0, pady = 1, sticky = NW)
 
 
 #functions
@@ -30,12 +30,29 @@ def show():
     #header of the table
     listheader = ['Name', 'Gender', 'Telephone', 'Email']
     
-    tree = ttk.Treeview(frame_table, selectmode = "extended", columns = listheader)
+    tree = ttk.Treeview(frame_table, selectmode = "extended", columns = listheader, show = "headings" )
+    
     #scrollbar
     vsb = ttk.Scrollbar(frame_table, orient = "vertical", command = tree.yview)
     hsb = ttk.Scrollbar(frame_table, orient = "horizontal", command = tree.xview)
     
     tree.configure(yscrollcommand = vsb.set, xscrollcommand = hsb.set)
+    
+    tree.grid(column = 0, row = 0, sticky = 'nsew')
+    vsb.grid(column = 1, row = 0, sticky =  'ns')
+    hsb.grid(column = 0, row = 1, sticky = 'ew')
+    
+    #tree head
+    tree.heading(0, text = ' Name', anchor = NW)
+    tree.heading(1, text = 'Gender', anchor = NW)
+    tree.heading(2, text = 'Telephone', anchor = NW)
+    tree.heading(3, text = 'Email', anchor = NW)
+    
+    #tree columns
+    tree.column(0, width = 120, anchor = NW)
+    tree.column(1, width = 50, anchor = NW)
+    tree.column(2, width = 100, anchor = NW)
+    tree.column(3, width = 180, anchor = NW)
     
 show()
 
