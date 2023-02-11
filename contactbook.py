@@ -63,7 +63,7 @@ def show():
 show()
 
 #codings
-#insert
+#to add
 def insert():
     Name = e_name.get()
     Gender = c_gender.get()
@@ -132,6 +132,21 @@ def to_update():
     
     except IndexError:
         messagebox.showerror('Error', 'Select one from the table.')
+
+#to remove
+def to_remove():
+    try:
+        tree_data = tree.focus()
+        tree_dictionary = tree.item(tree_data)
+        tree_list = tree_dictionary['values']
+        tree_telephone = str[tree_list[2]]
+        
+        remove(tree_telephone)
+        
+        messagebox.showinfo('Success', 'Data has been deleted.')
+        
+    except:
+        pass
         
 #frame_up style/widgets
 app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17 bold'), bg = co2, fg = co0)
