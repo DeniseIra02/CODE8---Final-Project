@@ -20,8 +20,24 @@ frame_up.grid(row = 0, column = 0, padx = 0, pady = 1)
 frame_down = Frame(window, width = 500, height = 150, bg = co0)
 frame_down.grid(row = 1, column = 0, padx = 0, pady = 1)
 
-frame_table = Frame(window, width = 500, height = 100, bg = co2)
+frame_table = Frame(window, width = 500, height = 100, bg = co0)
 frame_table.grid(row = 2, column = 0, columnspan = 2, padx = 0, pady = 1)
+
+
+#functions
+def show():
+    global tree
+    #header of the table
+    listheader = ['Name', 'Gender', 'Telephone', 'Email']
+    
+    tree = ttk.Treeview(frame_table, selectmode = "extended", columns = listheader)
+    #scrollbar
+    vsb = ttk.Scrollbar(frame_table, orient = "vertical", command = tree.yview)
+    hsb = ttk.Scrollbar(frame_table, orient = "horizontal", command = tree.xview)
+    
+    tree.configure(yscrollcommand = vsb.set, xscrollcommand = hsb.set)
+    
+show()
 
 #frame_up style/widgets
 app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17 bold'), bg = co2, fg = co0)
