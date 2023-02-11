@@ -53,4 +53,10 @@ l_email.place(x = 10, y = 110)
 e_email = Entry(frame_down, width = 25, justify = "left", highlightthickness = 1, relief = "solid")
 e_email.place(x = 80, y = 110)
 
+#search button/entry
+b_search = Button(frame_down, text = "Search", height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'))
+b_search.place(x = 290, y = 20)
+e_search = Entry(frame_down, width = 16, justify = "left", font = ('Ivy', 11), highlightthickness = 1, relief = "solid")
+e_search.place(x = 347, y = 20)
+
 window.mainloop()
