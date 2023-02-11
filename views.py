@@ -1,3 +1,4 @@
+from asyncore import write
 import sys
 import csv
 
@@ -8,7 +9,7 @@ def add(i):
         writer.writerow(i)
 
 #dummydata        
-add(['Anonymous', 'M', '54321', 'data@gmail.com'])
+# add(['Anonymous', 'M', '54321', 'data@gmail.com'])
 
 #view data/show data
 def view():
@@ -20,3 +21,17 @@ def view():
     print(data)
 
 view()
+
+#remove a data
+def remove(i): 
+    new_list = []
+    telephone = i
+    
+    with open('data.csv') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            new_list.append(row)
+            
+            for element in row:
+                if element == telephone:
+                    new_list.remove(row)
