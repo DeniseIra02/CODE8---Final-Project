@@ -40,7 +40,23 @@ def log_in():
     #required / username and password set
     if username == 'admin_ira' and password == 'trojan123': 
         
-        window_login.withdraw()#login window close
+        #login window close
+        window_login.withdraw()
+        
+        #main window layout 
+        #open main window
+        main = Tk()
+        height = 450
+        width = 1060
+        x = (main.winfo_screenwidth()//2)-(width//2)
+        y = (main.winfo_screenheight()//2)-(height//2)
+        
+        main.title("Con-Info-Book")
+        main.geometry('{}x{}+{}+{}'.format(width, height, x, y))
+        main.resizable(width = False, height = False)
+        
+        #to run the main window
+        main.mainloop()
         
     
     #error if not met the required username and password
