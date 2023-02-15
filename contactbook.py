@@ -67,6 +67,23 @@ def log_in():
         #--------------------------------------------------------------------------------------------#
         #functions of buttons in left frame
         
+        #to insert a data
+        def to_insert():
+            #get all input data
+            Firstname = ent_fname.get()
+            Lastname = ent_lname.get()
+            Birthdate = ent_dob.get()
+            Age = ent_age.get()
+            Gender = box_gender.get()
+            Phone = ent_phone.get()
+            Email = ent_email.get()
+            City = ent_city.get()
+            Province = ent_prov.get()
+            Country = ent_count.get()
+            
+            data = [Firstname, Lastname, Birthdate, Age, Gender, Phone, Email, City, Province, Country]
+            
+            
         
         
         
@@ -291,13 +308,6 @@ def log_in():
     
     elif password != 'trojan123':
         messagebox.showerror('Invalid!', "Invalid Password.")
-
-
-
-
-
-
-
 
 #------------------------------------------------------------------------#
 #set contents/widgets of the log in window
