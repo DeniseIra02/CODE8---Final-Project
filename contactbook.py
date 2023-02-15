@@ -47,7 +47,7 @@ def log_in():
         
         #main window layout 
         #open main window
-        main = Tk()
+        main = Toplevel(window_login)
         height = 450
         width = 1060
         x = (main.winfo_screenwidth()//2)-(width//2)
@@ -58,7 +58,7 @@ def log_in():
         main.resizable(width = False, height = False)
         
         #main icon
-        icon_main = PhotoImage(file = 'icon_main.png')
+        icon_main = PhotoImage(file='icon_main.png')
         main.iconphoto(False, icon_main)
         
         #timezone
@@ -370,6 +370,11 @@ def log_in():
         btn_search = Button(right_frame, text = "Search", width = 10, height = 1, bg = color4, fg = color1, font = font3, command = to_search)
         btn_search.place(x = 500, y = 10)
         
+        #frame for table
+        table_frame= Frame(main, width = 710, height = 350, bg = color1)
+        table_frame.grid(row = 1, column = 2, padx = 0, pady = 2)
+        table_frame.place(x = 350, y = 100)
+        
         #to show all data / view
         def show():
             global tree
@@ -378,7 +383,7 @@ def log_in():
             
             list = view()
             
-            tree = ttk.Treeview(table_frame, columns = listheader, show = "headings", )
+            tree = ttk.Treeview(table_frame, columns = listheader, show = "headings")
             tree.place(x = 0, y = 0, width = 690, height = 330)
             
             #style
@@ -421,7 +426,7 @@ def log_in():
             tree.column(6, width = 150, anchor = NW)
             tree.column(7, width = 120, anchor = NW)
             tree.column(8, width = 120, anchor = NW)
-            tree.column(2, width = 120, anchor = NW)
+            tree.column(9, width = 120, anchor = NW)
             
             for item in list:
                 tree.insert ('', 'end', values = item)
@@ -431,11 +436,6 @@ def log_in():
         #view button
         btn_view = Button(right_frame, text = "View", width = 10,  height = 1, bg = color4, fg = color1, font = font3, command = show)
         btn_view.place(x = 590, y = 10)
-        
-        #frame for table
-        table_frame= Frame(main, width = 710, height = 350, bg = color1)
-        table_frame.grid(row = 1, column = 2, padx = 0, pady = 2)
-        table_frame.place(x = 350, y = 100)
         
         #to run the main window
         main.mainloop()
@@ -482,234 +482,3 @@ btn_login.place(x = 90, y = 130)
 
 #run of login window 
 window_login.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# #window/layout
-# window = Tk()
-# window.title("Contact Book")
-# window.geometry('485x450')
-# window.configure(background = co0)
-# window.resizable(width = False, height = False)
-
-# #Frames/structure
-# frame_up = Frame(window, width = 500, height = 50, bg = co2)
-# frame_up.grid(row = 0, column = 0, padx = 0, pady = 1)
-
-# frame_down = Frame(window, width = 500, height = 150, bg = co0)
-# frame_down.grid(row = 1, column = 0, padx = 0, pady = 1)
-
-# frame_table = Frame(window, width = 500, height = 100, bg = co0, relief = "flat")
-# frame_table.grid(row = 2, column = 0, columnspan = 2, padx = 10, pady = 1, sticky = NW)
-
-# #functions
-# def show():
-#     global tree
-#     #header of the table
-#     listheader = ['Name', 'Gender', 'Telephone', 'Email']
-    
-#     demo_list = view()
-    
-#     tree = ttk.Treeview(frame_table, selectmode = "extended", columns = listheader, show = "headings" )
-    
-#     #scrollbar
-#     vsb = ttk.Scrollbar(frame_table, orient = "vertical", command = tree.yview)
-#     hsb = ttk.Scrollbar(frame_table, orient = "horizontal", command = tree.xview)
-    
-#     tree.configure(yscrollcommand = vsb.set, xscrollcommand = hsb.set)
-    
-#     tree.grid(column = 0, row = 0, sticky = 'nsew')
-#     vsb.grid(column = 1, row = 0, sticky =  'ns')
-#     hsb.grid(column = 0, row = 1, sticky = 'ew')
-    
-#     #tree head
-#     tree.heading(0, text = ' Name', anchor = NW)
-#     tree.heading(1, text = 'Gender', anchor = NW)
-#     tree.heading(2, text = 'Telephone', anchor = NW)
-#     tree.heading(3, text = 'Email', anchor = NW)
-    
-#     #tree columns
-#     tree.column(0, width = 120, anchor = NW)
-#     tree.column(1, width = 50, anchor = NW)
-#     tree.column(2, width = 100, anchor = NW)
-#     tree.column(3, width = 180, anchor = NW)
-    
-#     for item in demo_list:
-#         tree.insert ('', 'end', values = item)
-       
-# show()
-
-# #codings
-# #to add
-# def insert():
-#     Name = e_name.get()
-#     Gender = c_gender.get()
-#     Telephone = e_telephone.get()
-#     Email = e_email.get()
-    
-#     data = [Name, Gender, Telephone, Email]
-    
-#     if Name == '' or Gender == '' or Telephone == '' or Email == '':
-#         messagebox.showwarning('data', 'Please fill all fields')
-    
-#     else:
-#         add(data)
-#         messagebox.showinfo('data', 'Data added successfully.')
-        
-#         e_name.delete(0, 'end')
-#         c_gender.delete(0, 'end')
-#         e_telephone.delete(0, 'end')
-#         e_email.delete(0, 'end')
-        
-#         show()
-
-# #to update 
-# def to_update():
-#     try:
-#         tree_data = tree.focus()
-#         tree_dictionary = tree.item(tree_data)
-#         tree_list = tree_dictionary['values']
-        
-#         Name = str(tree_list[0])
-#         Gender = str(tree_list[1])
-#         Telephone = str(tree_list[2])
-#         Email = str(tree_list[3])
-        
-#         e_name.insert (0, Name)
-#         c_gender.insert(0, Gender)
-#         e_telephone.insert(0, Telephone)
-#         e_email.insert(0, Email)
-        
-#         #to save updated data
-#         def confirm():
-#             new_name = e_name.get()
-#             new_gender = c_gender.get()
-#             new_telephone = e_telephone.get()
-#             new_email = e_email.get()
-            
-#             data = [new_telephone, new_name, new_gender, new_telephone, new_email]
-            
-#             update(data)
-            
-#             messagebox.showinfo('Success', 'Data updated successfully.')
-            
-#             e_name.delete(0, 'end')
-#             c_gender.delete(0, 'end')
-#             e_telephone.delete(0, 'end')
-#             e_email.delete(0, 'end')
-            
-#             for widget in frame_table.winfo_children():
-#                 widget.destroy()
-                
-#             b_confirm.destroy()
-            
-#             show()
-#         b_confirm = Button(frame_down, text = "Confirm", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = confirm)
-#         b_confirm.place(x = 290, y = 110)
-    
-#     except IndexError:
-#         messagebox.showerror('Error', 'Select one from the table.')
-
-# #to remove
-# def to_remove():
-#     try:
-#         tree_data = tree.focus()
-#         tree_dictionary = tree.item(tree_data)
-#         tree_list = tree_dictionary['values']
-#         tree_telephone = str(tree_list[2])
-        
-#         remove(tree_telephone)
-        
-#         messagebox.showinfo('Success', 'Data has been deleted.')
-        
-#         for widget in frame_table.winfo_children():
-#             widget.destroy()
-        
-#         show()
-        
-#     except IndexError:
-#         messagebox.showerror('Error', 'Select one from the table.')
-
-# #to search
-# def to_search():
-#     telephone = e_search.get()
-    
-#     data = search(telephone)
-    
-#     def delete_command():
-#         tree.delete(*tree.get_children())
-        
-#     delete_command()
-    
-#     for item in data:
-#         tree.insert('', 'end', values = item)
-        
-#     e_search.delete(0, 'end')
-        
-# #frame_up style/widgets
-# app_name = Label(frame_up, text = "Contactbook", height = 1, font = ('Verdana 17 bold'), bg = co2, fg = co0)
-# app_name.place(x = 5, y = 5)
-
-# #frame_down style/widgets
-# #name
-# l_name = Label(frame_down, text = "Name *", width = 20, height = 1, font = ('Ivy 10'), bg = co0, anchor = NW)
-# l_name.place(x = 10, y = 20)    
-# e_name = Entry(frame_down, width = 25, justify = "left", highlightthickness = 1, relief = "solid")
-# e_name.place(x = 80, y = 20)
-
-# #gender
-# l_gender = Label(frame_down, text = "Gender *", width = 20, height = 1, font = ('Ivy 10'), bg = co0, anchor = NW)
-# l_gender.place(x = 10, y = 50)
-# c_gender = ttk.Combobox(frame_down, width = 27)
-# c_gender['values'] = ['', 'F', 'M']
-# c_gender.place(x = 80, y = 50)
-
-# #telephone
-# l_telephone = Label(frame_down, text = "Telephone*", height = 1, font = ('Ivy 10'), bg = co0, anchor = NW)
-# l_telephone.place(x = 10, y = 80)
-# e_telephone = Entry(frame_down, width = 25, justify = "left", highlightthickness = 1, relief = "solid")
-# e_telephone.place(x = 80, y = 80)
-
-# #email
-# l_email = Label(frame_down, text = "Email *", height = 1, font = ('Ivy 10'), bg = co0, anchor = NW)
-# l_email.place(x = 10, y = 110)
-# e_email = Entry(frame_down, width = 25, justify = "left", highlightthickness = 1, relief = "solid")
-# e_email.place(x = 80, y = 110)
-
-# #search button/entry
-# b_search = Button(frame_down, text = "Search", height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = to_search)
-# b_search.place(x = 290, y = 20)
-# e_search = Entry(frame_down, width = 16, justify = "left", font = ('Ivy', 11), highlightthickness = 1, relief = "solid")
-# e_search.place(x = 347, y = 20)
-
-# #view button
-# b_view = Button(frame_down, text = "View", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = show)
-# b_view.place(x = 290, y = 50)
-
-# #add
-# b_add = Button(frame_down, text = "Add", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = insert)
-# b_add.place(x = 400, y = 50)
-
-# #update
-# b_update = Button(frame_down, text = "Update", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = to_update)
-# b_update.place(x = 400, y = 80)
-
-# #delete
-# b_delete = Button(frame_down, text = "Delete", width = 10,  height = 1, bg = co2, fg = co0, font = ('Ivy 8 bold'), command = to_remove)
-# b_delete.place(x = 400, y = 110)
-
-# window.mainloop()
