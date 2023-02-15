@@ -59,6 +59,25 @@ def log_in():
         icon_main = PhotoImage(file='icon_main.png')
         main.iconphoto(False, icon_main)
         
+        #--------------------------------------------------------------------------------------------#
+        
+        #Frames/structure
+        
+        #upper frame for inside title and image
+        upper_frame = Frame(main, width = 1060, height = 50, bg = color2)
+        upper_frame.grid(row = 0, column = 0, padx = 0, pady = 2)
+        
+        #main image
+        title_image = PhotoImage(file = 'icon_main.png')
+        l_title_image = Label(upper_frame, image = title_image, bg = color2)
+        l_title_image.place(x = 340, y = 6)
+
+        #main title
+        title = Label(upper_frame, text = "Contact Information Book", height = 1, font = font1, bg = color2, fg = color1)
+        title.place(x = 390, y = 5)
+        
+        
+        
         #to run the main window
         main.mainloop()
         
