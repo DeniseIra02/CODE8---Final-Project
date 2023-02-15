@@ -67,7 +67,7 @@ def log_in():
         #--------------------------------------------------------------------------------------------#
         #functions of buttons in left frame
         
-        #to insert a data
+        #to insert a contact
         def to_insert():
             #get all input data
             Firstname = ent_fname.get()
@@ -104,7 +104,7 @@ def log_in():
                 
                 show()
         
-        #to update a data
+        #to update a contact
         def to_update():
             try:
                 #select a contact
@@ -179,7 +179,7 @@ def log_in():
             except IndexError:
                 messagebox.showerror('Error', 'Select the contact from the table.')
         
-        #to delete a data
+        #to delete a contact
         def to_delete():
             try:
                 #select 
@@ -200,6 +200,7 @@ def log_in():
             except IndexError:
                 messagebox.showerror('Error', 'Select the contact from the table.')  
 
+        #to search a contact
         def to_search():
             phone = ent_search.get()
             
@@ -215,7 +216,15 @@ def log_in():
                 
             ent_search.delete(0, 'end')
         
-        
+        #to reset inputs in Entries/combobox/spinbox
+        def reset():
+            for widget in left_frame.winfo_children():
+                if isinstance(widget, Entry):
+                    widget.delete(0, 'end')
+                if isinstance(widget, ttk.Combobox):
+                    widget.delete(0, 'end')
+                if isinstance(widget, Spinbox):
+                    widget.delete(0, 'end')
         
         
         
