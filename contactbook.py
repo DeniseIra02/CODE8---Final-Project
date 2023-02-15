@@ -206,6 +206,11 @@ def log_in():
         btn_view = Button(right_frame, text = "View", width = 10,  height = 1, bg = color4, fg = color1, font = font3)
         btn_view.place(x = 590, y = 10)
         
+        #frame for table
+        table_frame= Frame(main, width = 710, height = 350, bg = color1)
+        table_frame.grid(row = 1, column = 2, padx = 0, pady = 2)
+        table_frame.place(x = 350, y = 100)
+        
         #to run the main window
         main.mainloop()
         
