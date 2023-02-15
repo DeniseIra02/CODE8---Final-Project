@@ -57,6 +57,9 @@ lab_code.place(x = 10, y = 90)
 ent_code = Entry(log_frame, width = 20, fg = color2, bg = color3, font = font2, show = "*")
 ent_code.place(x = 90, y = 90)
 
+#button of login
+btn_login = Button(log_frame, text = "Log In", width = 10,  height = 1, bg = color4, fg = color1, font = font3)
+btn_login.place(x = 90, y = 130)
 
 #run of login window 
 window_login.mainloop()
