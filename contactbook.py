@@ -2,6 +2,8 @@ from tkinter import *
 from tkinter import ttk
 from views import *
 from tkinter import messagebox
+from datetime import datetime
+import pytz
 
 #set colors/ color value reference
 color1 = "#ffffff"
@@ -58,6 +60,9 @@ def log_in():
         #main icon
         icon_main = PhotoImage(file = 'icon_main.png')
         main.iconphoto(False, icon_main)
+        
+        #timezone
+        timezone = pytz.timezone('Asia/Manila')
         
         #--------------------------------------------------------------------------------------------#
         
@@ -173,14 +178,21 @@ def log_in():
         right_frame.place(x = 350, y = 50)
         
         #right frame widget
+        #date&time
+        lab_date = Label(right_frame, width = 25, height = 1, font = font4, bg = color3, fg = color4, anchor = NW)
+        lab_date.place(x = 20, y = 10)
+
+        lab_time = Label(right_frame, width = 25, height = 1, font = font4, bg = color3, fg = color4, anchor = NW)
+        lab_time.place(x = 140, y = 10)
+        
         # searchbar and button
         ent_search = Entry(right_frame, width = 35, justify = "left", font = font3, highlightthickness = 1, relief = "solid")
         ent_search.place(x = 270, y = 13)
-        btn_search = Button(right_frame, text = "Search", width = 10, height = 1, bg = color4, fg = color1, font = font3, command = to_search)
+        btn_search = Button(right_frame, text = "Search", width = 10, height = 1, bg = color4, fg = color1, font = font3)
         btn_search.place(x = 500, y = 10)
         
         #view button
-        btn_view = Button(right_frame, text = "View", width = 10,  height = 1, bg = color4, fg = color1, font = font3, command = show)
+        btn_view = Button(right_frame, text = "View", width = 10,  height = 1, bg = color4, fg = color1, font = font3)
         btn_view.place(x = 590, y = 10)
         
         #to run the main window
