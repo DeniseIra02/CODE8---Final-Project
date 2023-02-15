@@ -144,6 +144,26 @@ def log_in():
         ent_count = Entry(left_frame, width = 35, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
         ent_count.place(x = 100, y = 260)
 
+        #left frame buttons
+        #insert
+        btn_insert = Button(left_frame, text = "Insert", width = 10,  height = 1, bg = color4, fg = color1, font = font2)
+        btn_insert.place(x = 10, y = 295)
+
+        #update/edit
+        btn_edit = Button(left_frame, text = "Edit", width = 10,  height = 1, bg = color4, fg = color1, font = font2)
+        btn_edit.place(x = 130, y = 295)
+
+        #delete
+        btn_delete = Button(left_frame, text = "Delete", width = 10,  height = 1, bg = color4, fg = color1, font = font2) 
+        btn_delete.place(x = 250, y = 295)
+        
+        #reset
+        btn_reset = Button(left_frame, text = "Reset", width = 10,  height = 1, bg = color4, fg = color1, font = font2)
+        btn_reset.place(x = 180, y = 360)
+
+        #logout
+        btn_logout = Button(left_frame, text = "Log Out", width = 10,  height = 1, bg = color4, fg = color1, font = font2)
+        btn_logout.place(x = 70, y = 360)
         
         
         #to run the main window
