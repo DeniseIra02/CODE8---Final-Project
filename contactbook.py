@@ -95,11 +95,18 @@ def log_in():
         ent_lname.place(x = 100, y = 50)
         
         #for contact's date of birth
-        lab_dob = Label(left_frame, text = "Date of Birth:", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
+        lab_dob = Label(left_frame, text = "Birthdate:", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
         lab_dob.place(x = 20, y = 80)
         ent_dob = Entry(left_frame, width = 20, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
         ent_dob.insert(0, 'mm/dd/yyyy')
         ent_dob.place(x = 100, y = 80)
+        
+        #for contact's age
+        lab_age = Label(left_frame, text = "Age:", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
+        lab_age.place(x = 230, y = 80)
+        ent_age = Spinbox(left_frame, width = 5, from_ = 1, to = 100)
+        ent_age.place(x = 270, y = 80)
+
         
         
         #to run the main window
