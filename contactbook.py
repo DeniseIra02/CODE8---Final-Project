@@ -216,9 +216,61 @@ def log_in():
         
         #to show all data / view
         def show():
+            global tree
             #header of the table
             listheader = ['Firstname', 'Lastname', 'Birthdate', 'Age', 'Gender', 'Phone No.', 'Email', 'City', 'Province', 'Country']
             
+            list = view()
+            
+            tree = ttk.Treeview(table_frame, columns = listheader, show = "headings", )
+            tree.place(x = 0, y = 0, width = 690, height = 330)
+            
+            #style
+            style = ttk.Style()
+            
+            #some style for table
+            style.theme_use("default")
+                
+            #scrollbar
+            scrollbary = ttk.Scrollbar(table_frame, orient = VERTICAL)
+            scrollbarx = ttk.Scrollbar(table_frame, orient = HORIZONTAL)
+            
+            scrollbary.configure(command = tree.yview)
+            scrollbary.place(x = 690, y = 0, width=22, height=330)
+            
+            scrollbarx.configure(command = tree.xview)
+            scrollbarx.place(x = 2, y = 330, width=710, height=22)
+            
+            tree.configure(yscrollcommand = scrollbary.set, xscrollcommand = scrollbarx.set, selectmode=BROWSE)
+            
+            #tree head
+            tree.heading(0, text = 'FIRSTNAME', anchor = NW)
+            tree.heading(1, text = 'LASTNAME', anchor = NW)
+            tree.heading(2, text = 'BIRTHDAY', anchor = NW)
+            tree.heading(3, text = 'AGE', anchor = NW)
+            tree.heading(4, text = 'GENDER', anchor = NW)
+            tree.heading(5, text = 'PHONE NO.', anchor = NW)
+            tree.heading(6, text = 'EMAIL', anchor = NW)
+            tree.heading(7, text = 'CITY', anchor = NW)
+            tree.heading(8, text = 'PROVINCE', anchor = NW)
+            tree.heading(9, text = 'COUNTRY', anchor = NW)
+            
+            #tree columns
+            tree.column(0, width = 120, anchor = NW)
+            tree.column(1, width = 120, anchor = NW)
+            tree.column(2, width = 100, anchor = NW)
+            tree.column(3, width = 60, anchor = NW)
+            tree.column(4, width = 120, anchor = NW)
+            tree.column(5, width = 120, anchor = NW)
+            tree.column(6, width = 150, anchor = NW)
+            tree.column(7, width = 120, anchor = NW)
+            tree.column(8, width = 120, anchor = NW)
+            tree.column(2, width = 120, anchor = NW)
+            
+            for item in list:
+                tree.insert ('', 'end', values = item)
+            
+        show()
         
         #view button
         btn_view = Button(right_frame, text = "View", width = 10,  height = 1, bg = color4, fg = color1, font = font3, command = show)
