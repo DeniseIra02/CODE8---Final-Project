@@ -65,6 +65,18 @@ def log_in():
         timezone = pytz.timezone('Asia/Manila')
         
         #--------------------------------------------------------------------------------------------#
+        #functions of buttons in left frame
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        #--------------------------------------------------------------------------------------------#
         
         #Frames/structure
         
@@ -202,8 +214,14 @@ def log_in():
         btn_search = Button(right_frame, text = "Search", width = 10, height = 1, bg = color4, fg = color1, font = font3)
         btn_search.place(x = 500, y = 10)
         
+        #to show all data / view
+        def show():
+            #header of the table
+            listheader = ['Firstname', 'Lastname', 'Birthdate', 'Age', 'Gender', 'Phone No.', 'Email', 'City', 'Province', 'Country']
+            
+        
         #view button
-        btn_view = Button(right_frame, text = "View", width = 10,  height = 1, bg = color4, fg = color1, font = font3)
+        btn_view = Button(right_frame, text = "View", width = 10,  height = 1, bg = color4, fg = color1, font = font3, command = show)
         btn_view.place(x = 590, y = 10)
         
         #frame for table
