@@ -301,7 +301,7 @@ def log_in():
         btn_edit.place(x = 130, y = 295)
 
         #delete
-        btn_delete = Button(left_frame, text = "Delete", width = 10,  height = 1, bg = color4, fg = color1, font = font2) 
+        btn_delete = Button(left_frame, text = "Delete", width = 10,  height = 1, bg = color4, fg = color1, font = font2, command = to_delete) 
         btn_delete.place(x = 250, y = 295)
         
         #reset
