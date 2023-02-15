@@ -354,7 +354,7 @@ def log_in():
         # searchbar and button
         ent_search = Entry(right_frame, width = 35, justify = "left", font = font3, highlightthickness = 1, relief = "solid")
         ent_search.place(x = 270, y = 13)
-        btn_search = Button(right_frame, text = "Search", width = 10, height = 1, bg = color4, fg = color1, font = font3)
+        btn_search = Button(right_frame, text = "Search", width = 10, height = 1, bg = color4, fg = color1, font = font3, command = to_search)
         btn_search.place(x = 500, y = 10)
         
         #to show all data / view
