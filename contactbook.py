@@ -7,6 +7,14 @@ from tkinter import messagebox
 color1 = "#ffffff"
 color2 = "#000000"
 color3 = "#EEEEDF"
+color4 = "#47473C"
+color5 = "#8B8B22"
+
+#set font/font size
+font1 = ("Roboto", 20, "bold")
+font2 = ("Ivy", 10, "bold")
+font3 = ("Ivy", 8, "bold")
+font4 = ("Century Gothic", 12, "bold")
 
 #login window layout
 window_login = Tk()
@@ -20,6 +28,40 @@ window_login.title('Login - Contact Information Book')
 window_login.geometry('{}x{}+{}+{}'.format(width, height, x, y))
 window_login.resizable(width = False, height = False)
 window_login.config(background = color3)
+
+#------------------------------------------------------------------------#
+#set contents/widgets of the log in window
+
+#login image
+img = PhotoImage(file = 'img_login.png')
+lab_img = Label(window_login, image = img, bg = color3)
+lab_img.place(x = 20, y = 60)
+
+#login title frame
+log_frame = Frame(window_login, width = 250, height = 200, bg = color3)
+log_frame.place(x = 160, y = 25)
+
+#login title/heading
+lab_heading = Label(log_frame, text = 'Log In', font = font4, fg = color2, bg = color3)
+lab_heading.place(x = 100, y = 5)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # #window/layout
 # window = Tk()
