@@ -83,7 +83,26 @@ def log_in():
             
             data = [Firstname, Lastname, Birthdate, Age, Gender, Phone, Email, City, Province, Country]
             
+            #condition if the user has input in all fields
+            if Firstname == '' or Lastname == '' or Birthdate == '' or Age == '' or Gender == '' or Phone == '' or Email == '' or City == '' or Province == '' or Country == '':
+                messagebox.showwarning('Oops', 'Some fields are not filled yet. Please fill all fields.')
             
+            else:
+                add(data)
+                messagebox.showinfo('Success', 'Data has been successfully inserted.')
+                
+                ent_fname.delete(0, 'end')
+                ent_lname.delete(0, 'end')
+                ent_dob.delete(0, 'end')
+                ent_age.delete(0, 'end')
+                box_gender.delete(0, 'end')
+                ent_phone.delete(0, 'end')
+                ent_email.delete(0, 'end')
+                ent_city.delete(0, 'end')
+                ent_prov.delete(0, 'end')
+                ent_count.delete(0, 'end')
+                
+                show()
         
         
         
