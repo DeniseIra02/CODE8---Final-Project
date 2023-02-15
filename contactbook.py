@@ -104,9 +104,10 @@ def log_in():
                 
                 show()
         
-        #to update 
+        #to update a data
         def to_update():
             try:
+                #select a contact
                 tree_data = tree.focus()
                 tree_dictionary = tree.item(tree_data)
                 tree_list = tree_dictionary['values']
@@ -178,6 +179,27 @@ def log_in():
             except IndexError:
                 messagebox.showerror('Error', 'Select the contact from the table.')
         
+        #to delete a data
+        def to_delete():
+            try:
+                #select 
+                tree_data = tree.focus()
+                tree_dictionary = tree.item(tree_data)
+                tree_list = tree_dictionary['values']
+                tree_phone = str(tree_list[2])
+                
+                remove(tree_phone)
+                
+                messagebox.showinfo('Success', 'Data has been deleted.')
+                
+                for widget in table_frame.winfo_children():
+                    widget.destroy()
+                
+                show()
+                
+            except IndexError:
+                messagebox.showerror('Error', 'Select the contact from the table.')  
+
         
         
         
