@@ -134,6 +134,43 @@ def log_in():
                 ent_city.insert(0, City)
                 ent_prov.insert(0, Province)
                 ent_count.insert(0, Country)
+                
+                #to save updated data
+                def confirm():
+                    new_fname = ent_fname.get()
+                    new_lname = ent_lname.get()
+                    new_dob = ent_dob.get()
+                    new_age = ent_age.get()
+                    new_gender = box_gender.get()
+                    new_phone = ent_phone.get()
+                    new_email = ent_email.get()
+                    new_city = ent_city.get()
+                    new_prov = ent_prov.get()
+                    new_count = ent_count.get()
+                    
+                    data = [new_phone, new_fname, new_lname, new_dob, new_age, new_gender, new_phone, new_email, new_city, new_prov, new_count]
+                    
+                    update(data)
+                    
+                    messagebox.showinfo('Success', 'Data has been updated successfully.')
+                    
+                    ent_fname.delete(0, 'end')
+                    ent_lname.delete(0, 'end')
+                    ent_dob.delete(0, 'end')
+                    ent_age.delete(0, 'end')
+                    box_gender.delete(0, 'end')
+                    ent_phone.delete(0, 'end')
+                    ent_email.delete(0, 'end')
+                    ent_city.delete(0, 'end')
+                    ent_prov.delete(0, 'end')
+                    ent_count.delete(0, 'end')
+                    
+                    for widget in table_frame.winfo_children():
+                        widget.destroy()
+                        
+                    btn_confirm.destroy()
+                    
+                    show()
 
                 btn_confirm = Button(left_frame, text = "Confirm", width = 40,  height = 1, bg = color5, fg = color1, font = font2, command = confirm)
                 btn_confirm.place(x = 10, y = 327)
