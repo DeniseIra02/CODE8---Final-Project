@@ -45,6 +45,20 @@ log_frame.place(x = 160, y = 25)
 lab_heading = Label(log_frame, text = 'Log In', font = font4, fg = color2, bg = color3)
 lab_heading.place(x = 100, y = 5)
 
+#log in username label and entry
+lab_user = Label(log_frame, text = 'Username:', font = font2, fg = color2, bg = color3)
+lab_user.place(x = 10, y = 50)
+ent_user = Entry(log_frame, width = 20, fg = color2, bg = color3, font = font2)
+ent_user.place(x = 90, y = 50)
+
+#log in password label and entry
+lab_code = Label(log_frame, text = 'Password:', font = font2, fg = color2, bg = color3)
+lab_code.place(x = 10, y = 90)
+ent_code = Entry(log_frame, width = 20, fg = color2, bg = color3, font = font2, show = "*")
+ent_code.place(x = 90, y = 90)
+
+
+#run of login window 
 window_login.mainloop()
 
 
