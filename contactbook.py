@@ -106,6 +106,13 @@ def log_in():
         lab_age.place(x = 230, y = 80)
         ent_age = Spinbox(left_frame, width = 5, from_ = 1, to = 100)
         ent_age.place(x = 270, y = 80)
+        
+        #for contact's gender
+        lab_gender = Label(left_frame, text = "Gender:", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
+        lab_gender.place(x = 20, y = 110)
+        box_gender = ttk.Combobox(left_frame, width = 32)
+        box_gender['values'] = ['', 'Female', 'Male', 'Prefer Not to Say']
+        box_gender.place(x = 100, y = 110)
 
         
         
