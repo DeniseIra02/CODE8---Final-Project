@@ -56,7 +56,7 @@ def log_in():
         main.resizable(width = False, height = False)
         
         #main icon
-        icon_main = PhotoImage(file='icon_main.png')
+        icon_main = PhotoImage(file = 'icon_main.png')
         main.iconphoto(False, icon_main)
         
         #--------------------------------------------------------------------------------------------#
@@ -94,6 +94,12 @@ def log_in():
         ent_lname = Entry(left_frame, width = 35, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
         ent_lname.place(x = 100, y = 50)
         
+        #for contact's date of birth
+        lab_dob = Label(left_frame, text = "Date of Birth:", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
+        lab_dob.place(x = 20, y = 80)
+        ent_dob = Entry(left_frame, width = 20, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
+        ent_dob.insert(0, 'mm/dd/yyyy')
+        ent_dob.place(x = 100, y = 80)
         
         
         #to run the main window
