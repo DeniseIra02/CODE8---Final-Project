@@ -275,7 +275,7 @@ def log_in():
         btn_insert.place(x = 10, y = 295)
 
         #update/edit
-        btn_edit = Button(left_frame, text = "Edit", width = 10,  height = 1, bg = color4, fg = color1, font = font2)
+        btn_edit = Button(left_frame, text = "Edit", width = 10,  height = 1, bg = color4, fg = color1, font = font2, command = to_update)
         btn_edit.place(x = 130, y = 295)
 
         #delete
