@@ -45,7 +45,7 @@ log_frame.place(x = 160, y = 25)
 lab_heading = Label(log_frame, text = 'Log In', font = font4, fg = color2, bg = color3)
 lab_heading.place(x = 100, y = 5)
 
-
+window_login.mainloop()
 
 
 
