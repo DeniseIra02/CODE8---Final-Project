@@ -55,6 +55,10 @@ def log_in():
         main.geometry('{}x{}+{}+{}'.format(width, height, x, y))
         main.resizable(width = False, height = False)
         
+        #main icon
+        icon_main = PhotoImage(file='icon_main.png')
+        main.iconphoto(False, icon_main)
+        
         #to run the main window
         main.mainloop()
         
