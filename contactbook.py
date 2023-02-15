@@ -113,6 +113,18 @@ def log_in():
         box_gender = ttk.Combobox(left_frame, width = 32)
         box_gender['values'] = ['', 'Female', 'Male', 'Prefer Not to Say']
         box_gender.place(x = 100, y = 110)
+        
+        #for contact's phone number
+        lab_phone = Label(left_frame, text = "Phone No. :", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
+        lab_phone.place(x = 20, y = 140)
+        ent_phone = Entry(left_frame, width = 35, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
+        ent_phone.place(x = 100, y = 140)
+        
+        #for contact's email add
+        lab_email = Label(left_frame, text = "Email:", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
+        lab_email.place(x = 20, y = 170)
+        ent_email = Entry(left_frame, width = 35, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
+        ent_email.place(x = 100, y = 170)
 
         
         
