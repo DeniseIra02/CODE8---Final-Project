@@ -104,8 +104,42 @@ def log_in():
                 
                 show()
         
-        
-        
+        #to update 
+        def to_update():
+            try:
+                tree_data = tree.focus()
+                tree_dictionary = tree.item(tree_data)
+                tree_list = tree_dictionary['values']
+                
+                #from the tree list set it into strings
+                Firstname = str(tree_list[0])
+                Lastname = str(tree_list[1])
+                Birthdate = str(tree_list[2])
+                Age = str(tree_list[3])
+                Gender = str(tree_list[4])
+                Phone = str(tree_list[5])
+                Email = str(tree_list[6])
+                City = str(tree_list[7])
+                Province = str(tree_list[8])
+                Country = str(tree_list[9])
+                
+                #strings insert in the entries
+                ent_fname.insert(0, Firstname)
+                ent_lname.insert(0, Lastname)
+                ent_dob.insert(0, Birthdate)
+                ent_age.insert(0,Age)
+                box_gender.insert(0, Gender)
+                ent_phone.insert(0, Phone)
+                ent_email.insert(0, Email)
+                ent_city.insert(0, City)
+                ent_prov.insert(0, Province)
+                ent_count.insert(0, Country)
+
+                btn_confirm = Button(left_frame, text = "Confirm", width = 40,  height = 1, bg = color5, fg = color1, font = font2, command = confirm)
+                btn_confirm.place(x = 10, y = 327)
+                
+            except IndexError:
+                messagebox.showerror('Error', 'Select the contact from the table.')
         
         
         
