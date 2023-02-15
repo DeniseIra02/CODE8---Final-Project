@@ -226,6 +226,10 @@ def log_in():
                 if isinstance(widget, Spinbox):
                     widget.delete(0, 'end')
         
+        #to logout
+        def logout():
+            window_login.deiconify()
+            main.destroy()
         
         
         #--------------------------------------------------------------------------------------------#
@@ -328,7 +332,7 @@ def log_in():
         btn_delete.place(x = 250, y = 295)
         
         #reset
-        btn_reset = Button(left_frame, text = "Reset", width = 10,  height = 1, bg = color4, fg = color1, font = font2)
+        btn_reset = Button(left_frame, text = "Reset", width = 10,  height = 1, bg = color4, fg = color1, font = font2, command = reset)
         btn_reset.place(x = 180, y = 360)
 
         #logout
