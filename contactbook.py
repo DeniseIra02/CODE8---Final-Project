@@ -76,7 +76,7 @@ def log_in():
         title = Label(upper_frame, text = "Contact Information Book", height = 1, font = font1, bg = color2, fg = color1)
         title.place(x = 390, y = 5)
         
-        #left frame for widgets 
+        #left frame 
         left_frame = Frame(main, width = 350, height = 700, bg = color3)
         left_frame.grid(row = 1, column = 1, padx = 0, pady = 2)
         left_frame.place(x = 0, y = 50)
@@ -165,6 +165,10 @@ def log_in():
         btn_logout = Button(left_frame, text = "Log Out", width = 10,  height = 1, bg = color4, fg = color1, font = font2)
         btn_logout.place(x = 70, y = 360)
         
+        #right frame
+        right_frame = Frame(main, width = 710, height = 50, bg = color3)
+        right_frame.grid(row = 1, column = 2, padx = 0, pady = 2)
+        right_frame.place(x = 350, y = 50)
         
         #to run the main window
         main.mainloop()
