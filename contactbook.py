@@ -29,6 +29,34 @@ window_login.geometry('{}x{}+{}+{}'.format(width, height, x, y))
 window_login.resizable(width = False, height = False)
 window_login.config(background = color3)
 
+#----------------------------------------------------------------------------------------------------#
+#to function log in button 
+
+def log_in():
+    username = ent_user.get() #getting the username input
+    password = ent_code.get() #getting the password input
+    
+    #condition 
+    #required / username and password set
+    if username == 'admin_ira' and password == 'trojan123': 
+        
+        window_login.withdraw()#login window close
+        
+    
+    #error if not met the required username and password
+    elif username != 'admin_ira' and password != 'trojan123':
+        messagebox.showerror('Invalid!', "Invalid Entry.")
+    
+    elif password != 'trojan123':
+        messagebox.showerror('Invalid!', "Invalid Password.")
+
+
+
+
+
+
+
+
 #------------------------------------------------------------------------#
 #set contents/widgets of the log in window
 
@@ -58,7 +86,7 @@ ent_code = Entry(log_frame, width = 20, fg = color2, bg = color3, font = font2, 
 ent_code.place(x = 90, y = 90)
 
 #button of login
-btn_login = Button(log_frame, text = "Log In", width = 10,  height = 1, bg = color4, fg = color1, font = font3)
+btn_login = Button(log_frame, text = "Log In", width = 10,  height = 1, bg = color4, fg = color1, font = font3, command = log_in)
 btn_login.place(x = 90, y = 130)
 
 #run of login window 
