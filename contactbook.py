@@ -200,6 +200,20 @@ def log_in():
             except IndexError:
                 messagebox.showerror('Error', 'Select the contact from the table.')  
 
+        def to_search():
+            phone = ent_search.get()
+            
+            data = search(phone)
+            
+            def delete_command():
+                tree.delete(*tree.get_children())
+                
+            delete_command()
+            
+            for item in data:
+                tree.insert('', 'end', values = item)
+                
+            ent_search.delete(0, 'end')
         
         
         
