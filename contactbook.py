@@ -125,6 +125,24 @@ def log_in():
         lab_email.place(x = 20, y = 170)
         ent_email = Entry(left_frame, width = 35, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
         ent_email.place(x = 100, y = 170)
+        
+        #for contact's address (city)
+        lab_city = Label(left_frame, text = "City:", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
+        lab_city.place(x = 20, y = 200)
+        ent_city = Entry(left_frame, width = 35, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
+        ent_city.place(x = 100, y = 200)
+
+        #for contact's address (province)
+        lab_prov = Label(left_frame, text = "Province:", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
+        lab_prov.place(x = 20, y = 230)
+        ent_prov = Entry(left_frame, width = 35, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
+        ent_prov.place(x = 100, y = 230)
+
+        #for contact's address (vountry)
+        lab_count = Label(left_frame, text = "Country:", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
+        lab_count.place(x = 20, y = 260)
+        ent_count = Entry(left_frame, width = 35, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
+        ent_count.place(x = 100, y = 260)
 
         
         
