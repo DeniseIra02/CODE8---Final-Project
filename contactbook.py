@@ -185,6 +185,17 @@ def log_in():
         lab_time = Label(right_frame, width = 25, height = 1, font = font4, bg = color3, fg = color4, anchor = NW)
         lab_time.place(x = 140, y = 10)
         
+        #funtion for current date and clock
+        def date_clock():
+            raw_time = datetime.now(timezone)
+            date_now = raw_time.strftime("%d/%m/%Y")
+            time_now = raw_time.strftime("%H:%M:%S %p")
+            lab_date.config(text = date_now)
+            lab_time.config(text = time_now)
+            lab_time.after(1000, date_clock)
+
+        date_clock()
+        
         # searchbar and button
         ent_search = Entry(right_frame, width = 35, justify = "left", font = font3, highlightthickness = 1, relief = "solid")
         ent_search.place(x = 270, y = 13)
