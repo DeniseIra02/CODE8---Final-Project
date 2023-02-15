@@ -80,7 +80,13 @@ def log_in():
         left_frame = Frame(main, width = 350, height = 700, bg = color3)
         left_frame.grid(row = 1, column = 1, padx = 0, pady = 2)
         left_frame.place(x = 0, y = 50)
-
+        
+        #left frame widgets
+        #for firstname
+        lab_fname = Label(left_frame, text = "First Name:", width = 25, height = 1, font = font2, bg = color3, anchor = NW)
+        lab_fname.place(x = 20, y = 20)
+        ent_fname = Entry(left_frame, width = 35, justify = "left", highlightthickness = 1, relief = "solid", bg = color3)
+        ent_fname.place(x = 100, y = 20)
         
         
         
