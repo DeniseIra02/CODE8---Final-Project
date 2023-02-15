@@ -76,6 +76,12 @@ def log_in():
         title = Label(upper_frame, text = "Contact Information Book", height = 1, font = font1, bg = color2, fg = color1)
         title.place(x = 390, y = 5)
         
+        #left frame for widgets 
+        left_frame = Frame(main, width = 350, height = 700, bg = color3)
+        left_frame.grid(row = 1, column = 1, padx = 0, pady = 2)
+        left_frame.place(x = 0, y = 50)
+
+        
         
         
         #to run the main window
