@@ -9,10 +9,6 @@ def add(i):
         writer = csv.writer(file)
         writer.writerow(i)
 
-#dummydata        
-# add(['Anonymous', 'M', '54321', 'data@gmail.com'])
-#add(['demo', 'M', '123', 'demo@gmail.com'])
-
 #view data/show data
 def view():
     data = []
@@ -23,8 +19,6 @@ def view():
     print(data)
     return data
 
-#view()
-
 #remove a data
 def remove(i): 
     #save
@@ -34,7 +28,7 @@ def remove(i):
             writer.writerows(j)
             
     new_list = []
-    telephone = i
+    phone = i
     
     with open('data.csv', 'r') as file:
         reader = csv.reader(file)
@@ -42,56 +36,55 @@ def remove(i):
             new_list.append(row)
             
             for element in row:
-                if element == telephone:
+                if element == phone:
                     new_list.remove(row)
     
     save(new_list)
 
-# remove('54321')
-# view()
-
 #update a data
 def update(i):
-    
-    def update_newlist(j):
+    #save updated data
+    def update_newlist(i):
         with open('data.csv', 'w', newline = '') as file:
             writer = csv.writer(file)
-            writer.writerows(j)
+            writer.writerows(i)
     
     new_list = []
-    telephone = i[0]
+    phone = i[0]
     
     with open('data.csv', 'r') as file:
         reader = csv.reader(file)
         for row in reader:
             new_list.append(row)
             for element in row:
-                if element == telephone:
-                    name = i[1]
-                    gender = i[2]
-                    telephone = i[3]
-                    email = i[4]
+                if element == phone:
+                    fname = i[1]
+                    lname = i[2]
+                    dob = i[3]
+                    age = i[4]
+                    gender = i[5]
+                    phone = i[6]
+                    email = i[7]
+                    city = i[8]
+                    province = i[9]
+                    country = i[10]
                     
-                    data = [name, gender, telephone, email]
+                    data = [fname,lname,dob,age,gender,phone,email,city,province,country]
                     index = new_list.index(row)
                     new_list[index] = data
 
     update_newlist(new_list)
 
-# sample = ['123', 'girl', 'F', '123', 'girl@gmail.com']
-# update(sample)
-
 #search a data
 def search(i):
     data = []
-    telephone = i
+    phone = i
     
     with open('data.csv', 'r') as file:
         reader = csv.reader(file)
         for row in reader:
             for element in row:
-                if element == telephone:
+                if element == phone:
                     data.append(row)
     print(data)
     return data
-#search('123')
