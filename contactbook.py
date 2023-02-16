@@ -336,7 +336,7 @@ def log_in():
         btn_reset.place(x = 180, y = 360)
 
         #logout
-        btn_logout = Button(left_frame, text = "Log Out", width = 10,  height = 1, bg = color4, fg = color1, font = font2)
+        btn_logout = Button(left_frame, text = "Log Out", width = 10,  height = 1, bg = color4, fg = color1, font = font2, command = logout)
         btn_logout.place(x = 70, y = 360)
         
         
@@ -480,5 +480,5 @@ ent_code.place(x = 90, y = 90)
 btn_login = Button(log_frame, text = "Log In", width = 10,  height = 1, bg = color4, fg = color1, font = font3, command = log_in)
 btn_login.place(x = 90, y = 130)
 
-#run of login window 
+#run login window 
 window_login.mainloop()
