@@ -3,12 +3,6 @@ import re
 import sys
 import csv
 
-#add a data
-def add(i):
-    with open('data.csv', 'a+', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow(i)
-
 #view data/show data
 def view():
     data = []
@@ -19,27 +13,12 @@ def view():
     print(data)
     return data
 
-#remove a data
-def remove(i): 
-    #save
-    def save(j):
-        with open('data.csv', 'w', newline = '') as file:
-            writer = csv.writer(file)
-            writer.writerows(j)
-            
-    new_list = []
-    phone = i
-    
-    with open('data.csv', 'r') as file:
-        reader = csv.reader(file)
-        for row in reader:
-            new_list.append(row)
-            
-            for element in row:
-                if element == phone:
-                    new_list.remove(row)
-    
-    save(new_list)
+#add a data
+def add(i):
+    with open('data.csv', 'a+', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(i)
+
 
 #update a data
 def update(i):
@@ -74,6 +53,28 @@ def update(i):
                     new_list[index] = data
 
     update_newlist(new_list)
+
+#remove a data
+def remove(i): 
+    #save
+    def save(j):
+        with open('data.csv', 'w', newline = '') as file:
+            writer = csv.writer(file)
+            writer.writerows(j)
+            
+    new_list = []
+    phone = i
+    
+    with open('data.csv', 'r') as file:
+        reader = csv.reader(file)
+        for row in reader:
+            new_list.append(row)
+            
+            for element in row:
+                if element == phone:
+                    new_list.remove(row)
+    
+    save(new_list)
 
 #search a data
 def search(i):
