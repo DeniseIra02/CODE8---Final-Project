@@ -444,6 +444,9 @@ def log_in():
     #error if not met the required username and password
     elif username != 'admin_ira' and password != 'trojan123':
         messagebox.showerror('Invalid!', "Invalid Entry.")
+        
+    elif username != 'admin_ira':
+        messagebox.showerror('Invalid!', "Invalid Username.")
     
     elif password != 'trojan123':
         messagebox.showerror('Invalid!', "Invalid Password.")
